@@ -4,7 +4,7 @@
   "version": "${version}",
   "name": "AIFI-Craft",
   "description": "AI Frame Interpolation for Minecraft.",
-  "authors": ["YourName"],
+  "authors": ["GreekoASC"],
   "contact": {},
   "license": "MIT",
   "environment": "client",
