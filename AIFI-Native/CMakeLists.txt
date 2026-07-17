@@ -6,8 +6,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 find_package(JNI REQUIRED)
 
+# Fix: Added CMAKE_CURRENT_SOURCE_DIR to ensure the compiler finds the absolute path
 include_directories(${JNI_INCLUDE_DIRS})
-include_directories(src/include)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src/include)
 
 add_library(aifi_engine SHARED src/AIFINativeEngine.cpp)
 
