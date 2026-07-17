@@ -1,3 +1,4 @@
+// Fix: Simply include the file since it is now in the exact same folder
 #include "com_aificraft_AIFINativeEngine.h"
 #include <iostream>
 #include <vector>
@@ -21,8 +22,7 @@ JNIEXPORT void JNICALL Java_com_aificraft_AIFINativeEngine_processFrame
     }
 
     if (frameQueue.size() == 2) {
-        // Here you will eventually link ONNX runtime to read frameQueue[0] and frameQueue[1]
-        // and calculate the AI interpolated frame.
+        // AI interpolation logic will go here
     }
 }
 
@@ -30,6 +30,6 @@ JNIEXPORT void JNICALL Java_com_aificraft_AIFINativeEngine_renderInterpolatedFra
   (JNIEnv *env, jclass clazz) {
     
     if (frameQueue.size() == 2) {
-        // Here you will inject the AI frame back into the OpenGL pipeline.
+        // OpenGL injection logic will go here
     }
 }
