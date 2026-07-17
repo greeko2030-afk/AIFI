@@ -28,6 +28,7 @@ jobs:
           cp AIFI-Native/build/Release/aifi_engine.dll src/main/resources/natives/
 
       - name: Build Fabric Mod with Gradle
+        shell: bash
         run: ./gradlew build
 
       - name: Upload Finished Mod
