@@ -28,7 +28,8 @@ jobs:
           cp AIFI-Native/build/Release/aifi_engine.dll src/main/resources/natives/
 
       - name: Generate Gradle Wrapper
-        run: gradle wrapper
+        # Fix: Forced Gradle to use stable version 8.4 to prevent Fabric Loom errors
+        run: gradle wrapper --gradle-version 8.4
 
       - name: Build Fabric Mod with Gradle
         shell: bash
