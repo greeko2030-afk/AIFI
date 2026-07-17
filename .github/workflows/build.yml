@@ -27,6 +27,9 @@ jobs:
           mkdir -p src/main/resources/natives
           cp AIFI-Native/build/Release/aifi_engine.dll src/main/resources/natives/
 
+      - name: Generate Gradle Wrapper
+        run: gradle wrapper
+
       - name: Build Fabric Mod with Gradle
         shell: bash
         run: ./gradlew build
