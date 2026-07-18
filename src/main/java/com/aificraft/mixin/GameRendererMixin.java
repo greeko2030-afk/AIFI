@@ -12,7 +12,7 @@ public class GameRendererMixin {
 
     @Inject(method = "render", at = @At("TAIL"))
     private void onRender(float tickDelta, long startTime, boolean tick, CallbackInfo ci) {
-        long fboPointer = 0; // Replace with actual Minecraft Framebuffer pointer in production
+        long fboPointer = 0; 
         int currentWidth = 1920; 
         int currentHeight = 1080;
 
@@ -20,7 +20,7 @@ public class GameRendererMixin {
             AIFINativeEngine.processFrame(fboPointer, currentWidth, currentHeight);
             AIFINativeEngine.renderInterpolatedFrame();
         } catch (UnsatisfiedLinkError e) {
-            // DLL might not be loaded yet, ignore rendering AI frame safely
+            // DLL might not be loaded yet, safely ignore
         }
     }
 }
