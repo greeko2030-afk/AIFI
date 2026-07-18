@@ -27,9 +27,13 @@ jobs:
           mkdir -p src/main/resources/natives
           cp AIFI-Native/build/Release/aifi_engine.dll src/main/resources/natives/
 
-      - name: Generate Gradle Wrapper
-        # Fix: Forced Gradle to use stable version 8.4 to prevent Fabric Loom errors
-        run: gradle wrapper --gradle-version 8.4
+      - name: Generate Gradle Wrapper Safely
+        shell: bash
+        # Fix: Temporarily rename build.gradle so Gradle 9.6.0 doesn't crash while generating the 8.4 wrapper
+        run: |
+          mv build.gradle build.gradle.bak
+          gradle wrapper --gradle-version 8.4
+          mv build.gradle.bak build.gradle
 
       - name: Build Fabric Mod with Gradle
         shell: bash
@@ -38,5 +42,5 @@ jobs:
       - name: Upload Finished Mod
         uses: actions/upload-artifact@v4
         with:
-          name: AIFI-Craft-Mod
+          name: AIFI-Mod
           path: build/libs/*.jar
