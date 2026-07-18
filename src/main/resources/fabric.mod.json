@@ -7,7 +7,7 @@
   "authors": ["GreekoASC"],
   "contact": {},
   "license": "MIT",
-  "icon": "assets/aifi/icon.png"
+  "icon": "assets/aifi/icon.png",
   "environment": "client",
   "entrypoints": {
     "client": [
